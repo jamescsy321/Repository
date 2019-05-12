@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.SQLServer2008Dialect</property>
+<!--         <property name="hibernate.connection.datasource">java:comp/env/jdbc/TestDB</property> -->
+        
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+        <property name="hbm2ddl.auto">update</property>
+<!--         need to open this line during executing test -->
+        <property name="current_session_context_class">thread</property>
+    
+    	
+    	<mapping class="com.motozone.article.model.ArticleBean"/>
+    	<mapping class="com.motozone.article.model.ArticleIdBean"/>
+    	<mapping class="com.motozone.article.model.ArticleListBean"/>
+    	<mapping class="com.motozone.article.model.CategoryBean"/>
+    	<mapping class="com.motozone.article.model.CategoryStageBean"/>
+    	<mapping class="com.motozone.article.model.CategoryTranslateBean"/>
+    	<mapping class="com.motozone.general.model.UsersBean"/>
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,431 @@
+/* All content area */
+article {
+    width: 100%;
+    margin-top: 80px;
+}
+
+/* User center platform */
+#usercenter-title {
+    position: relative;
+    width: 450px;
+    margin: 0 auto;
+    margin-top: 0;
+    color: white;
+    font-size: 70px;
+    font-weight: 700;
+    text-align: center;
+    background-color: rgba(0, 0,0, 0.4);
+    border-top: 7px solid white;
+    border-bottom: 7px solid white;
+}
+#usercenter-title i,
+#usercenter-title div {
+    display: inline-block;
+    margin: 0 20px;
+}
+
+.control-panel-area {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+
+.control-panel-area > div {
+    display: inline-block;
+    position: relative;
+    width: 20%;
+    height: 220px;
+    margin-left: 50px;
+    margin-bottom: 30px;
+    padding: 0;
+    border-radius: 30px;
+    border: 2px solid rgba(0,0,0,0.7);
+    box-shadow: 0 0 10px black;
+    overflow: hidden;
+    transition: 0.7s;
+    cursor: pointer;
+}
+
+#report-area {
+    width: 1120px;
+    height: 110px;
+}
+
+.control-panel-area > div > div {
+    display: block;
+    font-size: 30px;
+    width: 100%;
+    margin: 0;
+    line-height: 50px;
+    font-weight: 700;
+    text-align: center;
+    color: black;
+    background: none;
+    border: none;
+    box-shadow: none;
+}
+
+#report-area div {
+    float: left;
+    width: 300px;
+    height: 220px;
+    line-height: 110px;
+    text-align: left;
+}
+
+.control-panel-area > div > i{
+    display: block;
+    width: 100%;
+    height: 150px;
+    line-height: 150px;
+    font-size: 90px;
+    text-align: center;
+}
+
+#report-area > i {
+    float: left;
+    height: 110px;
+    line-height: 110px;
+    width: 200px;
+    margin-left: 30%;
+}
+
+
+/* icon setting */
+
+.icons::before,
+.icons::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+.icons::before {
+    background:linear-gradient(45deg,rgba(255,255,255,0.9),rgba(80,80,80,0.9));
+    opacity: 1;
+}
+.icons::after {
+    background:linear-gradient(-45deg,rgba(154, 165, 1, 0.9),rgba(255, 255, 255, 0.9));
+    opacity: 0;
+}
+
+.icons:hover::before {
+    opacity: 0;
+    transition: 0.5s;
+}
+.icons:hover::after {
+    opacity: 1;
+    transition: 0.5s;
+}
+
+.icons:hover{
+    border: 2px solid rgba(168, 180, 0, 0.7);
+    box-shadow: 0 0 10px rgb(207, 221, 3);
+    transition: 0.5s;
+}
+
+/* side panel area */
+
+.side-control-panel-area {
+    position: fixed;
+    top: 70px;
+    left: 15px;
+    bottom: 0;
+    width: 100px;
+}
+
+.side-control-panel-area > div {
+    position: relative;
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    margin: 10px auto;
+    overflow: hidden;
+}
+
+.side-control-panel-area > div > i {
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    font-size: 50px;
+}
+
+
+
+
+/* configuration for all operation area */
+.op-area {
+    position: fixed;
+    top: 80px;
+    left: 130px;
+    right: 20px;
+    bottom: 20px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px black;
+    display: none;
+}
+
+.op-area::before {
+    content: "";
+    position: absolute;
+    top: 40px;
+    left: 0;
+    margin-top: -10px;
+    margin-left: -10px;
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg);
+    background-color: rgba(255, 255, 255, 1);
+}
+
+/* .op-area i {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-top: -10px;
+    margin-right: -10px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    font-size: 25px;
+    line-height: 30px;
+    background-color: white;
+    border-radius: 15px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.op-area i:hover {
+    background-color: coral;
+    transition: 0.5s;
+} */
+
+
+.tabs {
+    width: 100%;
+    height: 40px;
+}
+
+.tabs ~ div {
+    position: absolute;
+    top: 130px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border: 3px solid skyblue;
+    border-radius: 0 10px 10px 10px;
+    padding: 20px;
+    margin-top: -1px;
+    font-size: 22px;
+    display: none;
+}
+
+.tabs ~ div div {
+    margin-top: 10px;
+}
+
+
+.tab {
+    position: relative;
+    float: left;
+    width: 120px;
+    height: 100%;
+    line-height: 40px;
+    font-size: 22px;
+    font-weight: 700;
+    padding: 0 10px;
+    margin: 0 15px;
+    color: black;
+    background-color: lightgrey;
+    cursor: pointer;
+}
+
+.tab::before {
+    content: "";
+    position: absolute;
+    left: -14px;
+    bottom: 0;
+    border-color: transparent lightgrey lightgrey transparent;
+    border-style: solid;
+    border-width: 20px 7px;
+}
+
+.tab::after {
+    content: "";
+    position: absolute;
+    right: -14px;
+    bottom: 0;
+    border-color: transparent transparent lightgrey lightgrey;
+    border-style: solid;
+    border-width: 20px 7px;
+}
+
+.tab:hover{
+    background-color: coral;
+    z-index: 5;
+}
+
+.tab:hover::before {
+    border-color: transparent coral coral transparent;
+    z-index: 5;
+}
+
+.tab:hover::after {
+    border-color: transparent transparent coral coral;
+    z-index: 5;
+}
+
+.tab-select {
+    background-color: skyblue;
+    z-index: 3;
+}
+
+.tab-select::before {
+    border-color: transparent skyblue skyblue transparent;
+    z-index: 3;
+}
+
+.tab-select::after {
+    border-color: transparent transparent skyblue skyblue;
+    z-index: 3;
+}
+
+
+
+
+/* user data operation area */
+
+#user-data-op-area::before {
+    top: 40px;
+}
+
+
+
+/* article operation area */
+
+#article-op-area::before {
+    top: 130px;
+}
+
+/* transaction operation area */
+
+#tx-op-area::before {
+    top: 220px;
+}
+
+/* service operation area */
+
+#service-op-area::before {
+    top: 310px;
+}
+
+/* report operation area */
+
+#report-op-area::before {
+    top: 400px;
+}
+
+
+
+
+/* RWD resizing area */
+@media screen and (max-width: 1850px) {
+    
+}
+  
+/* 13" NB screen */
+@media screen and (max-width: 1470px) {
+    
+
+}
+
+
+@media screen and (max-width: 1170px) {
+    .admin-user-area-btn,
+    .admin-area-btn {
+        width: 40%;
+        height: 220px;
+        margin: 0 calc(5% - 3px);
+        margin-bottom: 30px;
+    }
+    .admin-area-btn {
+        width: 90%;
+        height: 110px;
+        margin: 0 5%;
+        
+    }
+    
+}
+
+/* mobile screen */
+@media screen and (max-width: 870px) {
+    .admin-user-area-btn,
+    .admin-area-btn {
+        width: 100%;
+        height: 220px;
+        margin: 0;
+        margin-bottom: 30px;
+    }
+
+    .admin-area-btn div {
+        font-size: 30px;
+        width: 100%;
+        line-height: 50px;
+        font-weight: 700;
+        text-align: center;
+        color: black;
+        /* border: 1px solid red; */
+    }
+
+    .admin-area-btn  i {
+    
+        display: block;
+        width: 100%;
+        height: 150px;
+        line-height: 150px;
+        font-size: 90px;
+        text-align: center;
+        margin-left: 0;
+        /* border: 1px solid red; */
+    }
+
+}
+
+/* shrink after click button */
+.shrink-area {
+    width: 90%;
+    
+}
+
+.shrink-btn {
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    margin: 10px 0;
+}
+
+
+.shrink-btn i {
+    clear: both;
+    display: block;
+    width: 100%;
+    height: 80px;
+    line-height: 80px;
+    font-size: 50px;
+    margin: 0;
+}
+
+
+
+
