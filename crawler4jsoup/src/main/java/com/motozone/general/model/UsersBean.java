@@ -2,68 +2,75 @@ package com.motozone.general.model;
 
 import java.util.Arrays;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="users")
+@Table(name="Users")
 public class UsersBean {
- @Id
- private String uid;
+ 
+ private Integer no;
+ private String id;
  private Byte[] pwd;
- private String uname;
+ private String name;
  private String email;
+ private String pic;
  
- 
-
 
 
 @Override
 public String toString() {
-	return "UsersBean [uid=" + uid + ", pwd=" + Arrays.toString(pwd) + ", uname=" + uname + ", email=" + email + "]";
+	return "UsersBean [no=" + no + ", id=" + id + ", pwd=" + Arrays.toString(pwd) + ", name=" + name + ", email="
+			+ email + ", pic=" + pic + "]";
 }
-
-
-public String getUid() {
-	return uid;
+@Id
+@Column(name="uNo")
+@GeneratedValue(strategy=GenerationType.IDENTITY)
+public Integer getNo() {
+	return no;
 }
-
-
-public void setUid(String uid) {
-	this.uid = uid;
+public void setNo(Integer no) {
+	this.no = no;
 }
-
-
+@Column(name="uID")
+public String getId() {
+	return id;
+}
+public void setId(String id) {
+	this.id = id;
+}
+@Column(name="pwd")
 public Byte[] getPwd() {
 	return pwd;
 }
-
-
 public void setPwd(Byte[] pwd) {
 	this.pwd = pwd;
 }
-
-
-public String getUname() {
-	return uname;
+@Column(name="uName")
+public String getName() {
+	return name;
 }
-
-
-public void setUname(String uname) {
-	this.uname = uname;
+public void setName(String name) {
+	this.name = name;
 }
-
-
+@Column(name="email")
 public String getEmail() {
 	return email;
 }
-
-
 public void setEmail(String email) {
 	this.email = email;
 }
-
-
+@Column(name="pic")
+public String getPic() {
+	return pic;
+}
+public void setPic(String pic) {
+	this.pic = pic;
+} 
+ 
 
 }

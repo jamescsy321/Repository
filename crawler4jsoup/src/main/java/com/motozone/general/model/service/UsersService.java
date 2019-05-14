@@ -13,8 +13,8 @@ import com.motozone.general.model.dao.UsersDAO;
 public class UsersService {
     @Autowired
 	private UsersDAO usersDao;
-	public UsersBean login(String uid,String pwd) {
-		UsersBean bean = usersDao.select(uid);
+	public UsersBean login(String id,String pwd) {
+		UsersBean bean = usersDao.select(id);
 		if(bean!=null) {
 			if(pwd!=null && pwd.length()!=0) {
 				Byte[] password = bean.getPwd();//資料庫抓出
@@ -23,10 +23,13 @@ public class UsersService {
 					pwdTran[i] =password[i].byteValue();
 				}
 				byte[] pwdinput = pwd.getBytes();//使用者輸入
-				 //String pwdinput = "A";
+				 
 				if(Arrays.equals(pwdTran,pwdinput)){
 			   return bean;
-			}
+			   
+			   //userbean比對完後再與usersviewbean比對
+			   //可能是usersviewbean bean1 = usersviewdao.select(bean.getid)
+			 }
 			
 		}
 		

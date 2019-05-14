@@ -44,7 +44,7 @@ public class UsersDAOHibernateTest {
 		System.out.println("result="+result);
 		System.out.println("email="+result.getEmail());
 		//將資料庫pwd與新設的password做byte陣列資料比對
-		String password = "A";
+		String password = "12345678";
 		Byte[] pwd = result.getPwd();
 		byte[] pwdTrans = new byte[pwd.length];
 		
@@ -57,14 +57,33 @@ public class UsersDAOHibernateTest {
 		System.out.println(pwdCheck);
 		//String email= haha.getEmail();
 		//System.out.println("email="+email);
-		sessionFactory.getCurrentSession().getTransaction().commit();
-		
 		
 		//System.out.println("email="+haha.getEmail());
 		
 		
 		
 	}
+	@Test
+	public void insert() {
+		sessionFactory.getCurrentSession().beginTransaction();
+	UsersBean insertbean = new UsersBean();
+	insertbean.setId("abc123");
+	String pwd = "12234567";
+	byte[] pwdbyte = pwd.getBytes();
+	Byte[] pwdTrans = new Byte[pwdbyte.length];
+	for(int i=0;i<pwdbyte.length;i++) {
+		pwdTrans[i] = pwdbyte[i];
+	}
+	
+	
+	insertbean.setPwd(pwdTrans);
+	insertbean.setName("科科");
+	insertbean.setEmail("abc@gmail.com");
+	boolean insertresult = usersDao.insert(insertbean);
+	sessionFactory.getCurrentSession().getTransaction().commit();
+	System.out.println("insertresult="+insertresult);
+		}
+	
 	
 	@After
 	public void tearDown() throws Exception {

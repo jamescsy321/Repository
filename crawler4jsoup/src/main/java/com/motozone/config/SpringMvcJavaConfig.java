@@ -18,7 +18,7 @@ import org.springframework.web.servlet.view.InternalResourceView;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages= {"com.motozone.article.controller"})
+@ComponentScan(basePackages= {"com.motozone.article.controller","com.motozone.general.controller"})
 @Import({com.motozone.config.view.ArticleViewJavaConfig.class,
 		 com.motozone.config.view.GeneralViewJavaConfig.class,
 		 com.motozone.config.view.TestViewJavaConfig.class})

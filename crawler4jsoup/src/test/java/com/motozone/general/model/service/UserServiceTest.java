@@ -32,11 +32,11 @@ public class UserServiceTest {
 	@Test
 	public void usersService() {
 		sessionFactory.getCurrentSession().beginTransaction();
-		UsersBean result = usersService.login("abc", "A");
-		System.out.println("result="+result);
+		UsersBean result1 = usersService.login("abc123", "12234567");
+		System.out.println("result1="+result1);
 		
-		UsersBean result2 = usersService.login("abc", "a");
-		System.out.println("result="+result2);
+		UsersBean result2 = usersService.login("abc", "123456");
+		System.out.println("result2="+result2);
 		
 		sessionFactory.getCurrentSession().getTransaction().commit();
 	}

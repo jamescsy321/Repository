@@ -1,5 +1,6 @@
 package com.motozone.config;
 
+import javax.naming.NamingException;
 import javax.sql.DataSource;
 
 import org.hibernate.SessionFactory;
@@ -7,6 +8,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
+import org.springframework.jndi.JndiObjectFactoryBean;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.PlatformTransactionManager;
@@ -34,7 +36,7 @@ public class SpringJavaConfig {
 //		
 //	}
 	
-	// spring fake dataSource
+	// spring fake dataSource for normal java program
 	@Bean
 	public DataSource dataSource() {
 		DriverManagerDataSource dmds = new DriverManagerDataSource();
@@ -48,7 +50,7 @@ public class SpringJavaConfig {
 		return dmds;
 		
 	}
-	
+	//for web program
 //	@Bean
 //	public DataSource dataSource() {
 //		JndiObjectFactoryBean factory = new JndiObjectFactoryBean();
